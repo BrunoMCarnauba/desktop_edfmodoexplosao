@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="409.0" style="-fx-background-color: green;" styleClass="backgroundBody" stylesheets="@../CSS/conexaoStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLConexaoController">
+   <children>
+      <ImageView fitHeight="212.0" fitWidth="422.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Imagens/background_conexao.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="65.0" layoutY="34.0" prefHeight="136.0" prefWidth="292.0" />
+      <Label fx:id="lblPortaSerial" layoutX="85.0" layoutY="32.0" minHeight="16" minWidth="69" text="Porta serial do dispositivo" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbPortasSeriais" layoutX="70.0" layoutY="64.0" prefHeight="40.0" prefWidth="282.0" />
+      <Button fx:id="btnConectar" contentDisplay="RIGHT" graphicTextGap="2.0" layoutX="131.0" layoutY="115.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnConectarPortaSerial" prefHeight="48.0" prefWidth="160.0" text="Conectar" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagens/icons/usb-port.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

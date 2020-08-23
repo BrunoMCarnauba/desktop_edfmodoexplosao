@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1266.0" style="-fx-background-color: green;" styleClass="backgroundBody" stylesheets="@../../CSS/fxmlmodoexplosao.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLModoExplosaoController">
+    <children>
+      <ImageView fitHeight="627.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagens/background_explosao.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutX="-1.0" layoutY="-4.0" prefHeight="25.0" prefWidth="1279.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Opções">
+               <items>
+                  <MenuItem fx:id="btnDesconectar" mnemonicParsing="false" onAction="#btnDesconectarPortaSerial" text="Desconectar-se" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem fx:id="btnSobre" mnemonicParsing="false" onAction="#btnTelaSobre" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label contentDisplay="RIGHT" layoutX="65.0" layoutY="111.0" text="Tempo total" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+         <graphic>
+            <ImageView cache="true" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagens/icons/stopwatch.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Text fx:id="txtCronometro" fill="WHITE" layoutX="57.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00:00">
+         <font>
+            <Font name="Arial" size="100.0" />
+         </font>
+      </Text>
+        <HBox alignment="CENTER" layoutX="47.0" layoutY="275.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="802.0" spacing="8.0">
+            <children>
+                <Button fx:id="btnIniciar" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#btnIniciarAplicacao" prefHeight="49.0" prefWidth="190.0" text="INICIAR">
+                    <font>
+                        <Font name="Arial" size="26.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagens/icons/play-button.png" />
+                     </image></ImageView>
+               </graphic>
+                </Button>
+                <Button fx:id="btnParar" contentDisplay="RIGHT" disable="true" graphicTextGap="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnPararCronometro" prefHeight="49.0" prefWidth="190.0" text="PARAR">
+                    <font>
+                        <Font name="Arial" size="26.0" />
+                    </font>
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagens/icons/stop.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+                </Button>
+                <Button fx:id="btnResumir" contentDisplay="RIGHT" disable="true" graphicTextGap="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnResumirCronometro" prefHeight="49.0" prefWidth="190.0" text="RESUMIR">
+                    <font>
+                        <Font name="Arial" size="26.0" />
+                    </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagens/icons/play-button%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+                </Button>
+                <Button fx:id="btnResetar" contentDisplay="RIGHT" disable="true" graphicTextGap="6.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnResetarCronometro" prefHeight="49.0" prefWidth="190.0" text="RESETAR">
+                    <font>
+                        <Font name="Arial" size="26.0" />
+                    </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagens/icons/restart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+                </Button>
+            </children>
+        </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000065" height="129.0" layoutX="200.0" layoutY="381.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="510.0" />
+      <Text fx:id="txtParticipanteAtual" fill="WHITE" layoutX="214.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vez de:">
+         <font>
+            <Font name="Calibri" size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnVoltarParticipante" accessibleText="Participante anterior" contentDisplay="CENTER" disable="true" layoutX="211.0" layoutY="440.0" mnemonicParsing="false" onAction="#btnVoltarParticipante" prefHeight="59.0" prefWidth="240.0" text="Participante anterior">
+         <tooltip>
+            <Tooltip text="Voltar para o participante anterior" />
+         </tooltip>
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnProximoParticipante" accessibleText="Próximo participante" contentDisplay="CENTER" disable="true" layoutX="458.0" layoutY="440.0" mnemonicParsing="false" onAction="#btnProximoParticipante" prefHeight="59.0" prefWidth="240.0" text="Próximo participante">
+         <tooltip>
+            <Tooltip text="Ir para o próximo participante" />
+         </tooltip>
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <ListView fx:id="lvResultados" layoutX="946.0" layoutY="37.0" prefHeight="505.0" prefWidth="322.0" styleClass="list-cell" />
+      <HBox layoutX="946.0" layoutY="555.0" prefHeight="64.0" prefWidth="322.0" spacing="8.0">
+         <children>
+            <Button fx:id="btnDeletarUltimoResultado" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#btnDeletarUltimoResultado" prefHeight="59.0" prefWidth="157.0">
+               <font>
+                  <Font name="Calibri" size="26.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagens/icons/backspace-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Deletar último resultado" />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnResetarLista" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#btnResetarListaResultados" prefHeight="59.0" prefWidth="157.0">
+               <font>
+                  <Font name="Calibri" size="26.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagens/icons/restart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Resetar lista de resultados" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+      <Text fx:id="txtTeste" fill="WHITE" layoutX="8.0" layoutY="621.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conectado">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
